@@ -16,6 +16,92 @@ body {
   color: var(--text);
   background: var(--bg);
   line-height: 1.7;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.bg-visual {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.blob,
+.flower {
+  position: absolute;
+  filter: blur(34px);
+  opacity: 0.5;
+}
+
+.blob {
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #ffeaf3 0%, #f7c9dc 70%, #f4bad3 100%);
+}
+
+.blob-1 {
+  width: 180px;
+  height: 180px;
+  top: 120px;
+  left: -48px;
+}
+
+.blob-2 {
+  width: 220px;
+  height: 220px;
+  top: 520px;
+  right: -90px;
+}
+
+.blob-3 {
+  width: 170px;
+  height: 170px;
+  bottom: 120px;
+  left: -60px;
+}
+
+.flower {
+  width: 140px;
+  height: 140px;
+}
+
+.flower::before,
+.flower::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(248, 208, 224, 0.85);
+}
+
+.flower::before {
+  width: 75px;
+  height: 75px;
+  top: 8px;
+  left: 32px;
+  box-shadow:
+    0 0 0 0 rgba(248, 208, 224, 0.85),
+    -35px 20px 0 0 rgba(248, 208, 224, 0.75),
+    35px 20px 0 0 rgba(248, 208, 224, 0.75),
+    -22px 58px 0 0 rgba(248, 208, 224, 0.72),
+    22px 58px 0 0 rgba(248, 208, 224, 0.72);
+}
+
+.flower::after {
+  width: 34px;
+  height: 34px;
+  top: 50px;
+  left: 53px;
+  background: rgba(250, 230, 238, 0.95);
+}
+
+.flower-1 {
+  top: 320px;
+  right: -30px;
+}
+
+.flower-2 {
+  bottom: 260px;
+  left: -36px;
 }
 
 .hero {
@@ -61,6 +147,8 @@ h2 {
 }
 
 .card {
+  background: rgba(255, 255, 255, 0.86);
+  backdrop-filter: blur(2px);
   background: var(--card);
   border: 1px solid #f2d9e4;
   border-radius: 12px;
@@ -75,6 +163,7 @@ h3 {
 
 .voice blockquote {
   margin: 0;
+  background: rgba(255, 255, 255, 0.9);
   background: #fff;
   border-left: 4px solid var(--accent);
   padding: 0.9rem;
@@ -122,5 +211,25 @@ footer {
 
   .card-grid {
     grid-template-columns: repeat(3, 1fr);
+  }
+
+  .blob-1 {
+    left: calc(50% - 520px);
+  }
+
+  .blob-2 {
+    right: calc(50% - 560px);
+  }
+
+  .blob-3 {
+    left: calc(50% - 540px);
+  }
+
+  .flower-1 {
+    right: calc(50% - 500px);
+  }
+
+  .flower-2 {
+    left: calc(50% - 505px);
   }
 }
