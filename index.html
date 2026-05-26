@@ -18,23 +18,34 @@
       <span class="flower flower-1"></span>
       <span class="flower flower-2"></span>
     </div>
-
     <header class="hero">
-      <div class="hero-slideshow" aria-hidden="true">
-        <span class="slide slide-1"></span>
-        <span class="slide slide-2"></span>
-        <span class="slide slide-3"></span>
-      </div>
-      <div class="hero-overlay"></div>
       <div class="hero-inner">
-        <p class="tag">採用サイト / RECRUIT</p>
-        <h1><span>わたしらしく、</span><br />建築のしごとを。</h1>
-        <p class="lead">
-          やわらぎ建設は、暮らしをつくる建築会社。<br />
-          女性が安心してキャリアを続けられる環境を整えています。
-        </p>
-        <a class="btn" href="#entry">エントリーする</a>
+        <div class="hero-copy">
+          <p class="tag">採用サイト / RECRUIT</p>
+          <h1><span>わたしらしく、</span><br />建築のしごとを。</h1>
+          <p class="lead">
+            やわらぎ建設は、暮らしをつくる建築会社。<br />
+            女性が安心してキャリアを続けられる環境を整えています。
+          </p>
+          <a class="btn" href="#entry">エントリーする</a>
+        </div>
+        <div class="hero-illustration" aria-hidden="true">
+          <div class="woman-figure">
+            <span class="head"></span>
+            <span class="hair"></span>
+            <span class="body"></span>
+            <span class="arm"></span>
+            <span class="helmet"></span>
+          </div>
+        </div>
       </div>
+      <p class="tag">採用サイト / RECRUIT</p>
+      <h1>わたしらしく、<br />建築のしごとを。</h1>
+      <p class="lead">
+        やわらぎ建設は、暮らしをつくる建築会社。<br />
+        女性が安心してキャリアを続けられる環境を整えています。
+      </p>
+      <a class="btn" href="#entry">エントリーする</a>
     </header>
 
     <main>
@@ -47,22 +58,20 @@
         </p>
       </section>
 
-      <section class="section points-section">
-        <h2 class="points-title">女性が働きやすい3つのポイント</h2>
-        <div class="points-grid">
-        <article class="point-card reveal-item">
+      <section class="section card-grid">
+        <h2>女性が働きやすい3つのポイント</h2>
+        <article class="card">
           <h3>柔軟な働き方</h3>
           <p>時短勤務・在宅での事務作業に対応。ライフステージに合わせて働けます。</p>
         </article>
-        <article class="point-card reveal-item">
+        <article class="card">
           <h3>安心のチーム体制</h3>
           <p>現場は必ず複数名で担当。困った時に相談しやすい風土があります。</p>
         </article>
-        <article class="point-card reveal-item">
+        <article class="card">
           <h3>成長サポート</h3>
           <p>資格取得支援や研修制度で、未経験からでも専門性を高められます。</p>
         </article>
-        </div>
       </section>
 
       <section class="section voice">
@@ -88,20 +97,5 @@
     <footer>
       <small>© やわらぎ建設 Recruit Site</small>
     </footer>
-    <script>
-      const revealItems = document.querySelectorAll('.reveal-item');
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('is-visible');
-              observer.unobserve(entry.target);
-            }
-          });
-        },
-        { threshold: 0.35 }
-      );
-      revealItems.forEach((item) => observer.observe(item));
-    </script>
   </body>
 </html>
